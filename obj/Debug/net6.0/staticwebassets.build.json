@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "GgWN/F05RhgXWMN9aZciAa+ARjFTW7fMolsLgoJexxc=",
+  "Source": "WeatherOfCity",
+  "BasePath": "_content/WeatherOfCity",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
