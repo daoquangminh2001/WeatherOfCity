@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using WeatherOfCity.Attributes;
 using WeatherOfCity.Input;
 using WeatherOfCity.Sevices;
 namespace WeatherOfCity.Controllers
@@ -15,6 +16,7 @@ namespace WeatherOfCity.Controllers
             _city = city;
         }
         [HttpGet]
+        [Cache(100)]
         public async Task<IActionResult> GetAllCity()
         {
             try

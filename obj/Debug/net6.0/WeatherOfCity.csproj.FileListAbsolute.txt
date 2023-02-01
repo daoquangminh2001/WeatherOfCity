@@ -73,3 +73,6 @@ E:\MyProject\WeatherOfCity\WeatherOfCity\bin\Debug\net6.0\Scrutor.dll
 E:\MyProject\WeatherOfCity\WeatherOfCity\bin\Debug\net6.0\Swashbuckle.AspNetCore.Filters.dll
 E:\MyProject\WeatherOfCity\WeatherOfCity\bin\Debug\net6.0\Swashbuckle.AspNetCore.Filters.Abstractions.dll
 E:\MyProject\WeatherOfCity\WeatherOfCity\bin\Debug\net6.0\Dapper.dll
+E:\MyProject\WeatherOfCity\WeatherOfCity\bin\Debug\net6.0\Microsoft.Extensions.Caching.StackExchangeRedis.dll
+E:\MyProject\WeatherOfCity\WeatherOfCity\bin\Debug\net6.0\Pipelines.Sockets.Unofficial.dll
+E:\MyProject\WeatherOfCity\WeatherOfCity\bin\Debug\net6.0\StackExchange.Redis.dll

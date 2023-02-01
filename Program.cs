@@ -3,13 +3,24 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using StackExchange.Redis;
 using Swashbuckle.AspNetCore.Filters;
 using System.Text;
 using WeatherOfCity;
+using WeatherOfCity.Models;
 using WeatherOfCity.Sevices;
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 builder.Services.AddDbContext<WeatherContext>(opt => opt.UseSqlServer(builder.Configuration.GetConnectionString("constring")));
+
+//config cho cache
+var redisConf = new RedisConfiguration();
+builder.Configuration.GetSection("RedisConfiguration").Bind(redisConf);
+builder.Services.AddSingleton(redisConf);
+builder.Services.AddSingleton<IConnectionMultiplexer>(_ => ConnectionMultiplexer.Connect(redisConf.RedisConnectionString));
+builder.Services.AddStackExchangeRedisCache(option => option.Configuration = redisConf.RedisConnectionString);
+builder.Services.AddSingleton<IResponseCacheServices, ResponseCacheServices>();
+
 builder.Services.AddEndpointsApiExplorer();
 
 /*builder.Services.AddSwaggerGen(opt =>
