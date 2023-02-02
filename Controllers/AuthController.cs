@@ -44,7 +44,7 @@ namespace WeatherOfCity.Controllers
             await _context.SaveChangesAsync();
             return Ok(user);
         }
-        private void CreatePassHash(string password, out byte[] passHash, out byte[] passSalt)
+        private void CreatePassHash(string password, out byte[] passHash, out byte[] passSalt)//truyền tham chiếu vì PasswordHash và PasswordSalt sử dụng lại tham số này
         {
             using (var hmac = new HMACSHA512())
             {

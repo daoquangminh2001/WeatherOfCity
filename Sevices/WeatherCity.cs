@@ -7,13 +7,13 @@ namespace WeatherOfCity.Sevices
 {
     public class WeatherCity : IWeatherCity
     {
-        private readonly WeatherContext _context;
+        //private readonly WeatherContext _context;
         private readonly IConfiguration _confi;
-        public int page_size { get; set; } = 7;
+        public int page_size { get; set; } = 7;// số query trên 1 trang
 
         public WeatherCity(WeatherContext context, IConfiguration confi)
         {
-            _context = context;
+            //_context = context;
             _confi = confi;
         }
 
@@ -27,7 +27,7 @@ namespace WeatherOfCity.Sevices
                     "dbo.SP_SELECT_WeatherCity",
                     commandType: CommandType.StoredProcedure
                     );
-                temp = temp.Skip((page - 1) * page_size).Take(page_size);
+                temp = temp.Skip((page - 1) * page_size).Take(page_size);// phân trang
                 result = temp.ToList();
             }
 

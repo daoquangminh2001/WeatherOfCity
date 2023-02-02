@@ -44,7 +44,7 @@ builder.Services.AddSwaggerGen(options => {
 
     options.OperationFilter<SecurityRequirementsOperationFilter>();
 });
-builder.Services.AddScoped<WeatherContext, WeatherContext>();
+builder.Services.AddScoped<WeatherContext, WeatherContext>();//Không tạo interface lên phải khai báo chính nó để DI
 builder.Services.AddScoped<ICityRespornsitory, CityRespornsitory>();
 builder.Services.AddScoped<IWeatherCity, WeatherCity>();
 builder.Services.AddScoped<IUserSevices, UserSevices>();

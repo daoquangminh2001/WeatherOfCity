@@ -29,8 +29,11 @@ namespace WeatherOfCity.Controllers
                 return BadRequest(ex.Message);
             }
         }
-        [HttpPost("Insert or update")]
-        public async Task<IActionResult> insert(List<CityInput> input)
+
+
+        [HttpPost]
+        [Route("insertupdatecity")]
+        public async Task<IActionResult> insert(List<CityInput>? input)
         {
             try
             {
@@ -43,7 +46,8 @@ namespace WeatherOfCity.Controllers
                 return BadRequest(ex.Message);
             }
         }
-        [HttpDelete("Delete city")]
+        [HttpDelete]
+        [Route("deletecity")]
         public async Task<IActionResult> delete(List<int> index)
         {
             try
